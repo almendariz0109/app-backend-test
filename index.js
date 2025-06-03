@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const authRoutes = require('../app-sigah-analytics/src/routes/authRoutes');
 const alertRoutes = require('../app-sigah-analytics/src/routes/alertRoutes');
 const pendingRoutes = require('../app-sigah-analytics/src/routes/pendingRoute');
+const warehouseRoutes = require('../app-sigah-analytics/src/routes/warehouseCoverageRoutes');
 
 dotenv.config();
 
@@ -23,8 +24,14 @@ app.use(express.json());
 app.use('/api', authRoutes);
 app.use('/api', alertRoutes);
 app.use('/api', pendingRoutes);
+app.use('/api', warehouseRoutes);
 
-// Servidor
-app.listen(PORT,'192.168.8.172', () => {
-  console.log(`Servidor corriendo en http://192.168.8.172:${PORT}`);
+// Servidor IP
+// app.listen(PORT,'192.168.8.172', () => {
+//   console.log(`Servidor corriendo en http://192.168.8.172:${PORT}`);
+// });
+
+// Servidor LocalHost
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
