@@ -5,6 +5,7 @@ const authRoutes = require('../app-sigah-analytics/src/routes/authRoutes');
 const alertRoutes = require('../app-sigah-analytics/src/routes/alertRoutes');
 const pendingRoutes = require('../app-sigah-analytics/src/routes/pendingRoute');
 const warehouseRoutes = require('../app-sigah-analytics/src/routes/warehouseCoverageRoutes');
+const skuscoveragelvlRoutes = require('../app-sigah-analytics/src/routes/skusCoverageLvlIPRESSRoutes');
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use('/api', authRoutes);
 app.use('/api', alertRoutes);
 app.use('/api', pendingRoutes);
 app.use('/api', warehouseRoutes);
+app.use('/api', skuscoveragelvlRoutes);
 
 // Servidor IP
 // app.listen(PORT,'192.168.8.172', () => {
